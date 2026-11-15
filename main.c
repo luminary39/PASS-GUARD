@@ -20,7 +20,7 @@ int check_common_passwords(char pass[]){
     FILE *fp;
     char word[1024];
 
-    fp = fopen("top-20-common-SSH-passwords.txt", "r");
+    fp = fopen("Common Passwords/top-20-common-SSH-passwords.txt", "r");
 
     if (fp == NULL){
         printf("Error! Password Dataset Not Found!\n");
@@ -107,6 +107,10 @@ int main(){
         else{
             pass_strength(pass);
         }
+
+        /*
+        There's a bug while repeating until password is strongt
+        */
 
         
     }
