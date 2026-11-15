@@ -2,6 +2,12 @@ Later Add These Features and build a standalone project with it
 https://github.com/danielmiessler/SecLists/tree/master/Passwords/Common-Credentials
 
 Later add more features like
+1. Need to add a algirithm type something to 
+repeteadly ask for password until it's strong enough!
+- currently it's when password meets minimal stronghold criteria
+programme prints verdicts on terminal and doesn't save .txt file with verdicts.
+
+
 1. common password detector
 2. repeated character detector
 3. sequencial pattern detection
