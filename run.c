@@ -52,8 +52,7 @@ const char *files[] = {
     "Common Passwords/xato-net-10-million-passwords-10000.txt",
     "Common Passwords/xato-net-10-million-passwords-100000.txt",
     "Common Passwords/xato-net-10-million-passwords-1000000.txt",
-
-
+    "Common Passwords/xato-net-10-million-passwords.txt",
 };
 
 // number of files, updates automatically
