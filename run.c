@@ -22,7 +22,9 @@ int from_leaked_passwords = 0; // counts how many databases contain the password
 
 // add new database files here
 const char *files[] = {
+    "Common Passwords/top-passwords-shortlist.txt",
     "Common Passwords/top-20-common-SSH-passwords.txt",
+    "Common Passwords/worst-passwords-2017-top100-slashdata.txt",
     "Common Passwords/10k-most-common.txt",
     "Common Passwords/100k-most-used-passwords-NCSC.txt",
     "Common Passwords/twentieth_century_dates_1900_2020.txt",
@@ -44,6 +46,12 @@ const char *files[] = {
     "Common Passwords/probable-v2_top-12000.txt",
     "Common Passwords/probable-v2_top-1575.txt",
     "Common Passwords/probable-v2_top-207.txt",
+    "Common Passwords/xato-net-10-million-passwords-10.txt",
+    "Common Passwords/xato-net-10-million-passwords-100.txt",
+    "Common Passwords/xato-net-10-million-passwords-1000.txt",
+    "Common Passwords/xato-net-10-million-passwords-10000.txt",
+    "Common Passwords/xato-net-10-million-passwords-100000.txt",
+    "Common Passwords/xato-net-10-million-passwords-1000000.txt",
 
 
 };
