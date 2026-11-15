@@ -106,6 +106,69 @@ int hundred_thousand_most_common_password(char pass[]){
     return 0; // password not found
 }
 
+// declaring function for -- twentieth_century_dates_1900_2020
+
+int twentieth_century_dates_1900_2020(char pass[]){
+
+    FILE *fp;
+    char word[1024];
+
+    fp = fopen("Common Passwords/twentieth_century_dates_1900_2020.txt", "r");
+
+    if (fp == NULL){
+        printf("Error! Password Dataset Not Found!\n");
+        return -1;
+    }
+
+    while(fgets(word, sizeof(word), fp)){
+
+        // remove newline character
+        word[strcspn(word, "\n\r")] = '\0';
+
+        // compare user password with dataset
+        if (strcmp(pass, word) == 0){
+            fclose(fp);
+            return 1; // common password found
+        }
+
+        
+    }
+    fclose(fp);
+    return 0; // password not found
+}
+
+
+// declaring function for -- 2020-200_most_used_passwords
+
+int load2020Top200Passwords(char pass[]){
+
+    FILE *fp;
+    char word[1024];
+
+    fp = fopen("Common Passwords/2020-200_most_used_passwords.txt", "r");
+
+    if (fp == NULL){
+        printf("Error! Password Dataset Not Found!\n");
+        return -1;
+    }
+
+    while(fgets(word, sizeof(word), fp)){
+
+        // remove newline character
+        word[strcspn(word, "\n\r")] = '\0';
+
+        // compare user password with dataset
+        if (strcmp(pass, word) == 0){
+            fclose(fp);
+            return 1; // common password found
+        }
+
+        
+    }
+    fclose(fp);
+    return 0; // password not found
+}
+
 
 // declaring function for -- password strength cheaker
 void pass_strength(char pass[]){
@@ -174,6 +237,18 @@ int main(){
         else if (hundred_thousand_most_common_password(pass) == 1) 
         {
             printf("Your Giver Password Is Vulnerable! Found In Our \"100k-most-used-passwords-NCSC Database\", \nTry Again ...\n\n");
+            main();
+        }
+
+        else if (twentieth_century_dates_1900_2020(pass) == 1) 
+        {
+            printf("Your Giver Password Is Vulnerable! Found In Our \"twentieth_century_dates_1900_2020 Database\", \nTry Again ...\n\n");
+            main();
+        }
+
+        else if(load2020Top200Passwords(pass) == 1)
+        {
+            printf("Your Giver Password Is Vulnerable! Found In Our \"2020-200_most_used_passwords Database\", \nTry Again ...\n\n");
             main();
         }
         
