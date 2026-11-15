@@ -260,7 +260,7 @@ printf("Total Uppercase: %d\n", upper);
 printf("Total lowercase: %d\n", lower);
 printf("Total Digits: %d\n", numbers);
 printf("Total Special Characters: %d\n", special);
-printf("Total Spaces: %d\n", spaces);
+printf("Total Spaces: %d\n", spaces-1);
 }
 
 // int main(){
@@ -348,7 +348,7 @@ int main(){
         from_leaked_passwords = 0;
 
         printf("Enter Your Password(enter 0 to close): ");
-        scanf("%99s", pass);
+        fgets(pass, sizeof(pass), stdin);
         int total_characters = strlen(pass);
 
         // programe quitting feature
@@ -408,7 +408,5 @@ int main(){
             break;
         }
         printf("\n\n");
-    }
-
-    return 0;
+    }    
 }

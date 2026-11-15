@@ -108,6 +108,9 @@ cmake-build-release/
 *.dict
 wordlists/
 seclists/
+# Oversized monolithic master wordlists (>100MB exceeds GitHub limits)
+PASS-GUARD-PASSWORD-MASTER.txt
+Common Passwords/PASS-GUARD-PASSWORD-MASTER.txt
 
 # ------------------------------------------
 # Operating System Specific Files
