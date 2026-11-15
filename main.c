@@ -42,13 +42,74 @@ int check_common_passwords(char pass[]){
     }
     fclose(fp);
     return 0; // password not found
+}
 
+// declaring function for -- 10k most common password checker
 
+int ten_thousand_most_common_password(char pass[]){
+
+    FILE *fp;
+    char word[1024];
+
+    fp = fopen("Common Passwords/10k-most-common.txt", "r");
+
+    if (fp == NULL){
+        printf("Error! Password Dataset Not Found!\n");
+        return -1;
+    }
+
+    while(fgets(word, sizeof(word), fp)){
+
+        // remove newline character
+        word[strcspn(word, "\n\r")] = '\0';
+
+        // compare user password with dataset
+        if (strcmp(pass, word) == 0){
+            fclose(fp);
+            return 1; // common password found
+        }
+
+        
+    }
+    fclose(fp);
+    return 0; // password not found
+}
+
+// declaring function for -- 100k-most-used-passwords-NCSC
+
+int hundred_thousand_most_common_password(char pass[]){
+
+    FILE *fp;
+    char word[1024];
+
+    fp = fopen("Common Passwords/100k-most-used-passwords-NCSC.txt", "r");
+
+    if (fp == NULL){
+        printf("Error! Password Dataset Not Found!\n");
+        return -1;
+    }
+
+    while(fgets(word, sizeof(word), fp)){
+
+        // remove newline character
+        word[strcspn(word, "\n\r")] = '\0';
+
+        // compare user password with dataset
+        if (strcmp(pass, word) == 0){
+            fclose(fp);
+            return 1; // common password found
+        }
+
+        
+    }
+    fclose(fp);
+    return 0; // password not found
 }
 
 
 // declaring function for -- password strength cheaker
 void pass_strength(char pass[]){
+    upper = lower = numbers = special = spaces = 0; // resetting values to 0
 
 // programe starts here
 
@@ -98,11 +159,24 @@ int main(){
         return 0;
     }
 
-    if(total_characters >=8){
+    if(total_characters >=4){
         if (check_common_passwords(pass) == 1){
-            printf("Your Giver Password Is Vulnerable! Found In Our Common Password Database, \nTry Again ...\n\n");
+            printf("Your Giver Password Is Vulnerable! Found In Our \"Top 20 Common SSH Passwords\" Database, \nTry Again ...\n\n");
             main();
         }
+
+        else if (ten_thousand_most_common_password(pass) == 1) 
+        {
+            printf("Your Giver Password Is Vulnerable! Found In Our \"10K Most Common Password Database\", \nTry Again ...\n\n");
+            main();
+        }
+
+        else if (hundred_thousand_most_common_password(pass) == 1) 
+        {
+            printf("Your Giver Password Is Vulnerable! Found In Our \"100k-most-used-passwords-NCSC Database\", \nTry Again ...\n\n");
+            main();
+        }
+        
 
         else{
             pass_strength(pass);
@@ -116,7 +190,7 @@ int main(){
     }
 
     else{
-        printf("Password Need to be at least 8 character long!\n\n");
+        printf("Password Need to be at least 4 character long!\n\n");
         main();
     }
 }
