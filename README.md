@@ -147,4 +147,8 @@ Ensure the `Common Passwords/` directory with `top-20-common-SSH-passwords.txt` 
 
 ## 📄 License
 
-This project is created for educational and security portfolio purposes. Distributed under the [MIT License](LICENSE) (or academic equivalent).
+PASS-GUARD is available for educational, research, and personal learning purposes only.
+
+Commercial use, resale, or integration into commercial products is prohibited without prior written permission from the author.
+
+Copyright © 2026 Sadman Sakib.
