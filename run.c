@@ -36,6 +36,14 @@ const char *files[] = {
     "Common Passwords/Pwdb_top-100000.txt",
     "Common Passwords/Pwdb_top-1000000.txt",
     "Common Passwords/Pwdb_top-10000000.txt",
+    "Common Passwords/darkweb2017_top-10.txt",
+    "Common Passwords/darkweb2017_top-100.txt",
+    "Common Passwords/darkweb2017_top-1000.txt",
+    "Common Passwords/darkweb2017_top-10000.txt",
+    "Common Passwords/medical-devices.txt",
+    "Common Passwords/probable-v2_top-12000.txt",
+    "Common Passwords/probable-v2_top-1575.txt",
+    "Common Passwords/probable-v2_top-207.txt",
 
 
 };
